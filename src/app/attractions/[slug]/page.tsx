@@ -8,6 +8,7 @@ import {
   getAttractionBySlug,
   getRelatedAttractions,
 } from "@/data/travel-data";
+import { withBasePath } from "@/lib/base-path";
 
 type AttractionDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -109,7 +110,7 @@ export default async function AttractionDetailPage({
           <div className="overflow-hidden rounded-[32px] border border-white/55 bg-white/20 shadow-[0_24px_70px_rgba(24,48,70,0.18)]">
             <div className="relative aspect-[4/3]">
               <Image
-                src={attraction.image}
+                src={withBasePath(attraction.image)}
                 alt={attraction.imageAlt}
                 fill
                 priority

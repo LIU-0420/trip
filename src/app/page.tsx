@@ -9,6 +9,7 @@ import {
   siteStats,
   stayAreas,
 } from "@/data/travel-data";
+import { withBasePath } from "@/lib/base-path";
 
 const featuredAttractions = attractions.slice(0, 3);
 
@@ -109,7 +110,7 @@ export default function HomePage() {
             >
               <div className="relative h-56">
                 <Image
-                  src={item.image}
+                  src={withBasePath(item.image)}
                   alt={item.imageAlt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"

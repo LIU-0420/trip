@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import type { Attraction } from "@/data/travel-data";
+import { withBasePath } from "@/lib/base-path";
 
 type AttractionBrowserProps = {
   attractions: Attraction[];
@@ -72,7 +73,7 @@ export function AttractionBrowser({ attractions }: AttractionBrowserProps) {
           >
             <div className="relative h-52 overflow-hidden">
               <Image
-                src={item.image}
+                src={withBasePath(item.image)}
                 alt={item.imageAlt}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
